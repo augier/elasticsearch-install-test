@@ -2,5 +2,5 @@ box: wercker/php
 build:
   steps:
 
-    - elasticsearch-install:
+    - augier/elasticsearch-install:
         version: 1.3.1
