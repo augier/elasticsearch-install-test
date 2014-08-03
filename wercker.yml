@@ -8,7 +8,7 @@ build:
     - script:
         name: Test
         code: |
-            sudo wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
+            sudo wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
             sudo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
             sudo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
             sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.0/debian stable main"
