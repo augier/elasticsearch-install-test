@@ -13,9 +13,14 @@ build:
             sudo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
             sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.0/debian stable main"
             sudo add-apt-repository ppa:webupd8team/java -y
-            sudo apt-get update; touch $WERCKER_CACHE_DIR/wercker/aptupdated;
-            sudo apt-get install oracle-java7-installer
-            sudo apt-get install elasticsearch
+
+    - install-packages:
+        packages:
+            oracle-java7-installer elasticsearch
+
+    - script:
+        name: finalise
+        code: |
             sudo echo "network.bind_host: 127.0.0.1" >>  /etc/elasticsearch/elasticsearch.yml
             sudo echo "script.disable_dynamic: true" >>  /etc/elasticsearch/elasticsearch.yml
             sudo service elasticsearch restart
