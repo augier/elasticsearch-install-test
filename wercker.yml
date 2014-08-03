@@ -16,11 +16,13 @@ build:
 
     - install-packages:
         packages:
-            oracle-java7-installer elasticsearch
+            oracle-java7-installer
 
     - script:
         name: finalise
         code: |
+            sudo wget -O /tmp/elasticsearch-$WERCKER_ELASTICSEARCH_INSTALL_VERSION.deb https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$WERCKER_ELASTICSEARCH_INSTALL_VERSION.deb
+            sudo dpkg -i /tmp/elasticsearch-$WERCKER_ELASTICSEARCH_INSTALL_VERSION.deb
             sudo echo "network.bind_host: 127.0.0.1" >>  /etc/elasticsearch/elasticsearch.yml
             sudo echo "script.disable_dynamic: true" >>  /etc/elasticsearch/elasticsearch.yml
             sudo service elasticsearch restart
