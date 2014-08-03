@@ -6,9 +6,5 @@ build:
         version: 1.3.1
 
     - script:
-        name: Listen to ports
-        code: sudo lsof -i TCP | grep 9200
-
-    - script:
         name: Test elasticsearch
-        code: curl -I 'http://192.168.0.1:9200/_status'
+        code: curl -I 'http://127.0.0.1:9200/'
