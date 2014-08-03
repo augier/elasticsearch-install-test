@@ -26,4 +26,4 @@ build:
 
     - script:
         name: Test elasticsearch
-        code: curl -I 'http://127.0.0.1:9200/'
+        code: curl -I 'http://127.0.0.1:9200/_status'
