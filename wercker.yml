@@ -1,4 +1,6 @@
 box: wunki/elasticsearch
+services:
+  - wunki/elasticsearch@0.0.2
 build:
   steps:
 
