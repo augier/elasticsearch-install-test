@@ -1,4 +1,4 @@
-box: wunki/elasticsearch
+box: wercker/php
 services:
   - wunki/elasticsearch@0.0.2
 build:
