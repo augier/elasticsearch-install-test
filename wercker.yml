@@ -8,8 +8,8 @@ build:
     - script:
         name: Check status
         code: |
-            sudo service elasticsearch start
-            sudo curl -I 'http://localhost:9200/_status'
+            sudo service elasticsearch start -v
+            sudo curl -I 'http://127.0.0.1:9200/'
 
 
 # sudo apt-get update
