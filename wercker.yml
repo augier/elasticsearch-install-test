@@ -6,7 +6,7 @@ build:
     - script:
         name: check elasticsearch
         code: |
-            sudo curl -XPUT 'http://localhost:9200/fanbookz/
+            sudo curl -XPUT 'http://localhost:9200/fanbookz/''
             sudo curl -I 'http://localhost:9200/fanbookz/'
 
     # - augier/elasticsearch-install:
