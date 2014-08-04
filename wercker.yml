@@ -9,7 +9,7 @@ build:
         name: Check status
         code: |
             sudo service elasticsearch start -v
-            tail -f /var/log/elasticsearch/elasticsearch.log
+            sudo tail -f /var/log/elasticsearch/elasticsearch.log
             sudo service elasticsearch status
             sudo curl -I 'http://127.0.0.1:9200/'
 
