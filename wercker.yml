@@ -1,4 +1,4 @@
-box: augier/UBUNTU12.04-WEBESSENTIALS
+box: augier/ubuntu12.04-webessentials
 build:
   steps:
 
