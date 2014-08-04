@@ -9,8 +9,8 @@ build:
         name: Check status
         code: |
             sudo service elasticsearch start
-            sudo curl -I 'http://localhost:9200/'
             sudo elasticsearch --version
+            sudo curl -I 'http://localhost:9200/'
 
 
 # sudo apt-get update
