@@ -1,4 +1,4 @@
-box: wercker/php
+box: augier/UBUNTU12.04-WEBESSENTIALS
 build:
   steps:
 
@@ -9,8 +9,8 @@ build:
         name: Check status
         code: |
             sudo service elasticsearch start
-            sudo service elasticsearch status
             sudo curl -I 'http://localhost:9200/'
+            sudo elasticsearch --version
 
 
 # sudo apt-get update
