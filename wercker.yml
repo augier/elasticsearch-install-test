@@ -6,7 +6,7 @@ build:
     - script:
         name: Remove elasticsearch
         code: |
-            sudo dpkg -r elasticsearch-0.20.5.deb
+            sudo dpkg -r elasticsearch
 
     # - augier/elasticsearch-install:
     #     version: 1.3.1
