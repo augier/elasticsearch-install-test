@@ -4,9 +4,9 @@ build:
   steps:
 
     - script:
-        name: check elasticsearch
+        name: Remove elasticsearch
         code: |
-            sudo curl -I 'http://localhost:9200/completeloadofshit/'
+            sudo dpkg -r elasticsearch-0.20.5.deb
 
     # - augier/elasticsearch-install:
     #     version: 1.3.1
