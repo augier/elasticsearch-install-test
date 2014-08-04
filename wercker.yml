@@ -8,21 +8,9 @@ build:
     - script:
         name: Check status
         code: |
-            sudo apt-get update
-            sudo apt-get install openjdk-7-jre-headless -y
-            sudo wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.tar.gz
-            sudo tar -xf elasticsearch-1.1.1.tar.gz
-            sudo rm elasticsearch-1.1.1.tar.gz
-            sudo mv elasticsearch-* elasticsearch
-            sudo mv elasticsearch /usr/local/share
-            sudo curl -L http://github.com/elasticsearch/elasticsearch-servicewrapper/tarball/master | tar -xz
-            sudo mkdir -p /use/local/share/elasticsearch/bin
-            sudo mv *servicewrapper*/service /usr/local/share/elasticsearch/bin/
-            sudo rm -Rf *servicewrapper*
-            sudo /usr/local/share/elasticsearch/bin/service/elasticsearch install
-            sudo ln -s `readlink -f /usr/local/share/elasticsearch/bin/service/elasticsearch` /usr/local/bin/rcelasticsearch
             sudo service elasticsearch start
             sudo service elasticsearch status
+            sudo curl -I 'http://localhost:9200/'
 
 
 # sudo apt-get update
